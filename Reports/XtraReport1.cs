@@ -26,6 +26,11 @@ namespace Reports
             dtTabel.Columns.Add(tcStudentNative.Name, typeof(string));
             dtTabel.Columns.Add(tcStudentSpecialist.Name, typeof(string));
 
+            foreach (var student in PModel.ListStudents)
+            {
+                
+            }
+
         }
     }
 }
