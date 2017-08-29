@@ -36,5 +36,10 @@ namespace Reports
         {
             //preview
         }
+
+        private void documentViewer1_BrickDoubleClick(object sender, DevExpress.XtraPrinting.Control.BrickEventArgs e)
+        {
+
+        }
     }
 }

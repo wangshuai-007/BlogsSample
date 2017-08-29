@@ -115,6 +115,7 @@
             this.documentViewer1.Name = "documentViewer1";
             this.documentViewer1.Size = new System.Drawing.Size(895, 534);
             this.documentViewer1.TabIndex = 0;
+            this.documentViewer1.BrickDoubleClick += new DevExpress.XtraPrinting.Control.BrickEventHandler(this.documentViewer1_BrickDoubleClick);
             // 
             // reportDesigner1
             // 

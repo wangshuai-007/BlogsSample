@@ -12,11 +12,9 @@ namespace Reports
     /// 打印基类
     /// </summary>
     public partial class ReportBase : DevExpress.XtraReports.UI.XtraReport
-    {
-        public ReportBase()
-        {
-            //InitializeComponent();
-        }
+    {          
+        //InitializeComponent();
+      
         /// <summary>
         /// 打印数据源
         /// </summary>

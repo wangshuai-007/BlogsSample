@@ -14,14 +14,21 @@ namespace Reports.Models
         /// <summary>
         /// 学生信息列表
         /// </summary>
-       public List<Students> ListStudents { get; set; }
+       public List<Student> ListStudents { get; set; }
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        public PrinteModel()
+        {
+            ListStudents=new List<Student>();
+        }
         
     }
 
     /// <summary>
     /// 学生实体类
     /// </summary>
-    public class Students
+    public class Student
     {
          /// <summary>
         /// 姓名
