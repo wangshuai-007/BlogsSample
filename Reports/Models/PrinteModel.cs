@@ -30,6 +30,10 @@ namespace Reports.Models
     /// </summary>
     public class Student
     {
+        /// <summary>
+        /// 学生编号
+        /// </summary>
+        public int StudentId { get; set; }
          /// <summary>
         /// 姓名
         /// </summary>

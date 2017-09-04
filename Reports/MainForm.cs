@@ -29,6 +29,7 @@ namespace Reports
             {
                 studentList.Add(new Student()
                 {
+                    StudentId = i,
                     Age = i.ToString(),
                     Name = "张三" + i,
                     Nation = "汉",

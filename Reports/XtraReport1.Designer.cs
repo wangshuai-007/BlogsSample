@@ -80,6 +80,7 @@
             this.tbStudentDetail.StylePriority.UseBorders = false;
             this.tbStudentDetail.StylePriority.UseTextAlignment = false;
             this.tbStudentDetail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.tbStudentDetail.PrintOnPage += new DevExpress.XtraReports.UI.PrintOnPageEventHandler(this.tbStudentDetail_PrintOnPage);
             // 
             // xrTableRow1
             // 
@@ -228,6 +229,7 @@
             this.Detail1.KeepTogether = true;
             this.Detail1.Name = "Detail1";
             this.Detail1.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
+            this.Detail1.AfterPrint += new System.EventHandler(this.Detail1_AfterPrint);
             // 
             // ReportHeader
             // 
