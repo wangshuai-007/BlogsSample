@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,30 +34,43 @@ namespace Reports.Models
         /// <summary>
         /// 学生编号
         /// </summary>
+        [Browsable(false)]
         public int StudentId { get; set; }
-         /// <summary>
+        /// <summary>
         /// 姓名
         /// </summary>
+        [Category("学生信息")]
+        [DisplayName("姓名")]
         public string Name { get; set; }
         /// <summary>
         /// 性别
         /// </summary>
-        public string Sex { get; set; }
+        [Category("学生信息")]
+        [DisplayName("性别")]
+        public Sex Sex { get; set; }
         /// <summary>
         /// 年龄
         /// </summary>
-        public string Age { get; set; }
+        [Category("学生信息")]
+        [DisplayName("年龄")]
+        public int Age { get; set; }
         /// <summary>
         /// 民族
         /// </summary>
+        [Category("学生信息")]
+        [DisplayName("民族")]
         public string Nation { get; set; }
         /// <summary>
         /// 籍贯
         /// </summary>
+        [Category("学生信息")]
+        [DisplayName("籍贯")]
         public string Native { get; set; }
         /// <summary>
         /// 特长
         /// </summary>
+        [Category("学生信息")]
+        [DisplayName("特长")]
         public string Specialist { get; set; }
     }
 }

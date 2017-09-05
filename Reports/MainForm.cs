@@ -30,11 +30,11 @@ namespace Reports
                 studentList.Add(new Student()
                 {
                     StudentId = i,
-                    Age = i.ToString(),
+                    Age = i,
                     Name = "张三" + i,
                     Nation = "汉",
                     Native = "杭州",
-                    Sex = "男",
+                    Sex = Sex.男,
                     Specialist = $"玩{i}种游戏"
 
                 });

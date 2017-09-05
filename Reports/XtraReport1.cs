@@ -11,6 +11,9 @@ using Reports.Models;
 
 namespace Reports
 {
+    /// <summary>
+    /// 学生数据打印报表
+    /// </summary>
     public partial class XtraReport1 :ReportBase
     {
         /// <summary>
@@ -62,9 +65,11 @@ namespace Reports
             }
             var dtSet=new DataSet("Source");
             dtSet.Tables.Add(dtTabel);
+            //此处决定是否按页打印出表格数据
             DetailReport.DataSource = dtSet;
-            //DataSource = dtSet;
-            //Detail.DataBindings.Add("DataSet",dtSet,"Source");
+            
+
+            //绑定数据到设计好的table上
             tcStudentName.DataBindings.Add("Text", dtSet.Tables[0], tcStudentName.Name);
             tcStudentSex.DataBindings.Add("Text", dtSet.Tables[0], tcStudentSex.Name);
             tcStudentAge.DataBindings.Add("Text", dtSet.Tables[0], tcStudentAge.Name);
@@ -73,7 +78,11 @@ namespace Reports
             tcStudentSpecialist.DataBindings.Add("Text", dtSet.Tables[0], tcStudentSpecialist.Name);
         }
       
-
+        /// <summary>
+        /// 将生成打印明细的数据打印到界面上的事件处理方法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tbStudentDetail_PrintOnPage(object sender, PrintOnPageEventArgs e)
         {
             if (ListStudentId.Any())
@@ -108,7 +117,11 @@ namespace Reports
                 //ListStudentId.RemoveAt(0);
             }
         }
-
+        /// <summary>
+        /// 生成Table明细数据之后的事件处理方法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Detail1_AfterPrint(object sender, EventArgs e)
         {
             var dtRowView = DetailReport.GetCurrentRow() as DataRowView;

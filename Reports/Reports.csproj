@@ -76,6 +76,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\PrinteModel.cs" />
     <Compile Include="PrintePreview.cs">
       <SubType>Form</SubType>

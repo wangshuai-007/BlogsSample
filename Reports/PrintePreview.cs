@@ -26,7 +26,9 @@ namespace Reports
         /// 打印选项设置
         /// </summary>
         private PrintingSystem printingSystem { get; set; }                  
-
+        /// <summary>
+        /// 构造函数
+        /// </summary>
         public PrintePreview()
         {
             InitializeComponent();
@@ -34,12 +36,18 @@ namespace Reports
             printingSystem = new PrintingSystem();
             documentViewerBarManager1.PrintControl.PrintingSystem = printingSystem;
         }
-
+        /// <summary>
+        /// 加载界面的事件处理方法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PrintePreview_Load(object sender, EventArgs e)
         {
             LoadData();
         }
-
+        /// <summary>
+        /// 加载界面数据
+        /// </summary>
         private void LoadData()
         {
             //加载打印内容
@@ -66,7 +74,11 @@ namespace Reports
         {
             //preview
         }
-
+        /// <summary>
+        /// 双击打印预览页面的事件处理方法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void documentViewer1_BrickDoubleClick(object sender, DevExpress.XtraPrinting.Control.BrickEventArgs e)
         {
             var studentId = string.Empty;
@@ -105,6 +117,7 @@ namespace Reports
                 var dlg= newForm.ShowDialog();
                 if (dlg == DialogResult.OK)
                 {
+                    //重新打印
                     var newReport=ListReport.First();
                     newReport.SetDataSource(); 
                     LoadData();
