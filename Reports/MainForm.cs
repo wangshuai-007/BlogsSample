@@ -19,7 +19,7 @@ namespace Reports
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            //测试
         }
 
         private void BtnPrinte_Click(object sender, EventArgs e)
