@@ -116,7 +116,8 @@ namespace ExpandCollection
         public string Description {  get; set; }
         [EditorAttribute(typeof(GenericDictionaryEditor<string,string>), typeof(System.Drawing.Design.UITypeEditor))]
         public Dictionary<string, string> DicClassRoomId_Name {  get; set; }
-
+        [Browsable(false)]
+        public string IndexName { get; internal set; }
     }
 
     internal class CourseConverter:ExpandableObjectConverter

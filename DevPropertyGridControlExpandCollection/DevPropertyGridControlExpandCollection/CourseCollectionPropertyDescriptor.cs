@@ -15,7 +15,7 @@ namespace ExpandCollection
         {
             this.collection = coll;
             this.index = idx;
-            //collection[index].IndexName = "#" + idx.ToString();
+            collection[index].IndexName = "#" + idx.ToString();
         }
 
         public override AttributeCollection Attributes

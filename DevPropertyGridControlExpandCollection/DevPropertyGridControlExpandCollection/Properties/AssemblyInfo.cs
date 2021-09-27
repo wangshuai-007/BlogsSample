@@ -1,12 +1,13 @@
-﻿using System.Reflection;
+﻿using System.Resources;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("devexpress如何在PropertyGridControl中直接编辑集合成员")]
-[assembly: AssemblyDescription("此为博客：https://blog.wangshuai.app/2021/09/26/devexpress%E5%A6%82%E4%BD%95%E5%9C%A8PropertyGridControl%E4%B8%AD%E7%9B%B4%E6%8E%A5%E7%BC%96%E8%BE%91%E9%9B%86%E5%90%88%E6%88%90%E5%91%98/的源码")]
+[assembly: AssemblyTitle("devexpress如何隐藏PropertyGridControl中的行")]
+[assembly: AssemblyDescription("此为博客：https://blog.wangshuai.app/2021/09/27/devexpress如何隐藏PropertyGridControl中的行/的源码")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ExpandCollection")]
@@ -32,5 +33,6 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.0.1")]
+[assembly: AssemblyFileVersion("1.0.0.1")]
+[assembly: NeutralResourcesLanguage("zh-Hans")]

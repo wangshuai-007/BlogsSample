@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraVerticalGrid;
+using DevExpress.XtraVerticalGrid.Events;
+using DevExpress.XtraVerticalGrid.Rows;
 
 namespace ExpandCollection
 {
@@ -17,11 +20,25 @@ namespace ExpandCollection
             InitializeComponent();
             this.Load += Form1_Load;
         }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
-            propertyGridControl1.SelectedObject=GetTestStudent();
+            var student = GetTestStudent();
+            propertyGridControl1.SelectedObject = student;
             propertyGridControl1.OptionsBehavior.PropertySort = DevExpress.XtraVerticalGrid.PropertySort.NoSort;
+            propertyGridControl1.ExpandAllRows();
+
+            //set row Tag info
+            student.ListCourses.ForEach(x =>
+                        {
+                            //IndexName set by CourseCollectionPropertyDescriptor constructor
+                            var fieldName = nameof(Student.ListCourses) + "." + x.IndexName + "." +
+                            nameof(Course.DicClassRoomId_Name);
+                            var row = propertyGridControl1.GetRowByFieldName(fieldName);
+                            row.Tag = x;
+                        });
+
+            propertyGridControl1.RowsIterator.DoOperation(new SetDicRowVisibleRowOperation());
         }
         private Student GetTestStudent()
         {
@@ -52,6 +69,20 @@ namespace ExpandCollection
                     {"604","Room604" }
                 }
             };
+        }
+    }
+    public class SetDicRowVisibleRowOperation : DevExpress.XtraVerticalGrid.Rows.RowOperation
+    {
+        public override void Execute(DevExpress.XtraVerticalGrid.Rows.BaseRow row)
+        {
+            Console.WriteLine(row.Properties.Caption);   
+            if (row.Tag is Course course)
+            {
+                var fieldName = nameof(Student.ListCourses) + "." + course.IndexName + "." +
+                                   nameof(Course.DicClassRoomId_Name);
+                if (row.Properties.FieldName == fieldName)
+                    row.Visible = course.Id == 2;
+            }
         }
     }
 }
